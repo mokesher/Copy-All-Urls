@@ -1,0 +1,43 @@
+{
+	"update_url": "https://clients2.google.com/service/update2/crx",
+	"action": {
+		"default_icon": "img/umbrella_19.png",
+		"default_title": "Copy URLs to clipboard",
+		"default_popup": "popup.html"
+	},
+	"description": "Fork of Copy tabs URL to clipboard (formats : text, HTML, JSON or custom). Paste to open multiple URL at one go.",
+	"icons": {
+		"128": "img/umbrella_128.png",
+		"64": "img/umbrella_64.png",
+		"19": "img/umbrella_19.png"
+	},
+	"background": {
+		"service_worker": "background.js"
+	},
+	"commands": {
+		"copy": {
+			"suggested_key": {
+				"default": "Alt+C"
+			},
+			"description": "Copy"
+		},
+		"paste": {
+			"suggested_key": {
+				"default": "Alt+V"
+			},
+			"description": "Paste"
+		}
+	},
+	"name": "Copy All Urls",
+	"options_ui": {
+		"page": "options.html",
+		"open_in_tab": true
+	},
+	"permissions": ["tabs", "notifications", "storage", "clipboardRead", "clipboardWrite", "offscreen"],
+	"host_permissions": ["<all_urls>"],
+	"content_security_policy": {
+		"extension_pages": "script-src 'self'; object-src 'self'"
+	},
+	"version": "3.0",
+	"manifest_version": 3
+}
